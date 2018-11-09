@@ -21,7 +21,7 @@ class Game():
 
             if action == 'gå' and target in self.theWorld.currentRoom.directions:
                 self.enterDoor(target)
-            if action == 'se' and target in self.theWorld.currentRoom.contents.keys():
+            elif action == 'se' and target in self.theWorld.currentRoom.contents.keys():
                 print(self.theWorld.currentRoom.contents[target])
             else:
                 print('Det kan ikke lade sig gøre!')
