@@ -16,6 +16,9 @@ class Room():
 
     def __init__(self, entryDoor=None, entryDirection=None):
         #self.id = self.generateId()
+        self.mood = random.choice(self.importList('stemningsord.txt'))
+        self.color = random.choice(self.importList('farver.txt'))
+
         self.contents = {}
         if entryDirection != None:
             opposite = self.oppositeDirection(entryDirection)
@@ -49,8 +52,18 @@ class Room():
         elif direction == 'ned':
             return 'op'
 
+    def importList(self, file):
+        # Kendt bug: Skærer et bogstav af sidste linie i filen.
+        # Kan hackes ved at indsætte tom linie sidst i filen.
+        file = open(file, 'r', encoding="utf-8")
+        list = []
+        for line in file:
+            list.append(line.strip().lower())
+        file.close()
+        return list
+
     def __repr__(self):
-        out = ''
+        out = 'Du er i et rum med vægge i en {} {} farve.'.format(self.mood, self.color)
         #out += self.id
         out += '\n'
         for door in self.contents:
@@ -70,13 +83,14 @@ class Door():
         self.thisRoom, self.otherRoom = self.otherRoom, self.thisRoom
 
     def __repr__(self):
-        out = 'Du ser en dør'
+        out = 'Du ser er en '
         if self.locked:
-            out += '.\nDen er låst'
+            out += 'låst '
+        if self.locked and self.trapped:
+            out += 'og '
         if self.trapped:
-            out += ' og ser mistænkelig ud.'
-        else:
-            out += '.'
+            out += 'mistænkeligt udseende '
+        out += 'dør.\n'
         return out
 
 class Chest():

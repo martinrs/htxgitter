@@ -69,6 +69,6 @@ class Game():
 if __name__ == '__main__':
     playerName = input('Velkommen fremmede. Hvad er dit navn\n')
     theGame = Game(Player(playerName.title()))
-    print('Held og lykke på din færd {}!'.format(theGame.thePlayer.creatureName))
+    print('Held og lykke på din færd {}!\n\n'.format(theGame.thePlayer.creatureName))
 
     theGame.runGame()
