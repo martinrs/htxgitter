@@ -28,7 +28,7 @@ class Game():
 
     def enterDoor(self, direction):
         if self.theWorld.currentRoom.contents[direction].locked:
-            print('Døren er låst.')
+            print('Døren er låst.\n')
         else:
             print('\nDu går gennem døren mod {}.'.format(direction))
             if self.theWorld.currentRoom.contents[direction].trapped:

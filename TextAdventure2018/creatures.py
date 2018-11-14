@@ -5,7 +5,7 @@ class Creature():
         self.hitpoints = hitpoints
 
     def takeDamage(self, amount):
-        pass
+        self.hitpoints -= amount
 
     def attack(self, anEnemy):
         pass

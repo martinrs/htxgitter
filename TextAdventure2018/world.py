@@ -11,7 +11,7 @@ class World():
 
 class Room():
 
-    doorChance = 0.15
+    doorChance = 0.5
     directions = ['nord', 'syd', 'øst', 'vest', 'op', 'ned']
 
     def __init__(self, entryDoor=None, entryDirection=None):
