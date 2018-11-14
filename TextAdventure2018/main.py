@@ -35,10 +35,12 @@ class Game():
                 self.springTrap()
             otherroom = self.theWorld.currentRoom.contents[direction].otherRoom
             if otherroom != None:
+                self.theWorld.currentRoom.contents[direction].use()
                 self.theWorld.currentRoom = otherroom
             else:
                 self.theWorld.newRoom(direction)
-
+                self.theWorld.currentRoom.contents[self.theWorld.currentRoom.oppositeDirection(direction)].use()
+                
     def springTrap(self):
         damage = random.randint(1, 10)
         print('Du gik i en fælde og tog {} skade. AV!'.format(damage))

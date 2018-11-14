@@ -7,7 +7,10 @@ class World():
         self.currentRoom = Room()
 
     def newRoom(self, entryDirection):
-        self.currentRoom = Room(self.currentRoom.contents[entryDirection], entryDirection)
+        new = Room(self.currentRoom.contents[entryDirection], entryDirection)
+        new.contents[new.oppositeDirection(entryDirection)].otherRoom = self.currentRoom
+        self.currentRoom.contents[entryDirection].otherRoom = new
+        self.currentRoom = new
 
 class Room():
 
@@ -15,15 +18,15 @@ class Room():
     directions = ['nord', 'syd', 'øst', 'vest', 'op', 'ned']
 
     def __init__(self, entryDoor=None, entryDirection=None):
-        #self.id = self.generateId()
+        self.id = self.generateId()
         self.mood = random.choice(self.importList('stemningsord.txt'))
         self.color = random.choice(self.importList('farver.txt'))
 
         self.contents = {}
         if entryDirection != None:
             opposite = self.oppositeDirection(entryDirection)
+            entryDoor.otherRoom = self
             self.contents[opposite] = entryDoor
-            self.contents[opposite].use()
 
         for direction in self.directions:
             if not direction in self.contents.keys() and random.random() < self.doorChance:
@@ -64,7 +67,7 @@ class Room():
 
     def __repr__(self):
         out = 'Du er i et rum med vægge i en {} {} farve.'.format(self.mood, self.color)
-        #out += self.id
+        #out = self.id
         out += '\n'
         for door in self.contents:
             out += 'Der er en dør mod {}.\n'.format(door)
@@ -91,6 +94,7 @@ class Door():
         if self.trapped:
             out += 'mistænkeligt udseende '
         out += 'dør.\n'
+        #out += 'Døren fører fra {} til {}'.format(self.thisRoom.id, self.otherRoom.id)
         return out
 
 class Chest():
