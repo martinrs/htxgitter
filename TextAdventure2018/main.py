@@ -69,6 +69,22 @@ class Game():
                 return target
 
 if __name__ == '__main__':
+    # Sej overskrift generert med http://www.patorjk.com/software/taag
+    print("""
+            Det uendelige...\n
+    ▄▄▄█████▓▓█████  ██ ▄█▀  ██████ ▄▄▄█████▓▓█████ ██▒   █▓▓█████  ███▄    █ ▄▄▄█████▓▓██   ██▓ ██▀███
+    ▓  ██▒ ▓▒▓█   ▀  ██▄█▒ ▒██    ▒ ▓  ██▒ ▓▒▓█   ▀▓██░   █▒▓█   ▀  ██ ▀█   █ ▓  ██▒ ▓▒ ▒██  ██▒▓██ ▒ ██▒
+    ▒ ▓██░ ▒░▒███   ▓███▄░ ░ ▓██▄   ▒ ▓██░ ▒░▒███   ▓██  █▒░▒███   ▓██  ▀█ ██▒▒ ▓██░ ▒░  ▒██ ██░▓██ ░▄█ ▒
+    ░ ▓██▓ ░ ▒▓█  ▄ ▓██ █▄   ▒   ██▒░ ▓██▓ ░ ▒▓█  ▄  ▒██ █░░▒▓█  ▄ ▓██▒  ▐▌██▒░ ▓██▓ ░   ░ ▐██▓░▒██▀▀█▄
+      ▒██▒ ░ ░▒████▒▒██▒ █▄▒██████▒▒  ▒██▒ ░ ░▒████▒  ▒▀█░  ░▒████▒▒██░   ▓██░  ▒██▒ ░   ░ ██▒▓░░██▓ ▒██▒
+      ▒ ░░   ░░ ▒░ ░▒ ▒▒ ▓▒▒ ▒▓▒ ▒ ░  ▒ ░░   ░░ ▒░ ░  ░ ▐░  ░░ ▒░ ░░ ▒░   ▒ ▒   ▒ ░░      ██▒▒▒ ░ ▒▓ ░▒▓░
+        ░     ░ ░  ░░ ░▒ ▒░░ ░▒  ░ ░    ░     ░ ░  ░  ░ ░░   ░ ░  ░░ ░░   ░ ▒░    ░     ▓██ ░▒░   ░▒ ░ ▒░
+      ░         ░   ░ ░░ ░ ░  ░  ░    ░         ░       ░░     ░      ░   ░ ░   ░       ▒ ▒ ░░    ░░   ░
+                ░  ░░  ░         ░              ░  ░     ░     ░  ░         ░           ░ ░        ░
+                                                        ░                               ░ ░
+            En endeløs famlen i mørket!\n\n\n
+    """)
+
     playerName = input('Velkommen fremmede. Hvad er dit navn\n')
     theGame = Game(Player(playerName.title()))
     print('Held og lykke på din færd {}!\n\n'.format(theGame.thePlayer.creatureName))
