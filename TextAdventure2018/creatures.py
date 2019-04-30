@@ -21,9 +21,11 @@ class Player(Creature):
         super().__init__(playerName, 20)
 
     def __repr__(self):
-        out = ''
-        out += '-------|{}|--------\n'.format(self.creatureName)
-        out += 'Hitpoints:\t{}\n'.format(self.hitpoints)
+        width = 60
+        out = '|{}|'.format(self.creatureName)
+        while len(out) < width:
+            out = '-' + out + '-'
+        out += '\nHitpoints:\t{}\n'.format(self.hitpoints)
         return out
 
 

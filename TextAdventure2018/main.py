@@ -13,8 +13,8 @@ class Game():
 
     def runGame(self):
         while True:
-            print(self.theWorld.currentRoom)
             print(self.thePlayer)
+            print(self.theWorld.currentRoom)
             ind = input('Hvad vil du gøre?\n').lower()
             action = self.getAction(ind)
             target = self.getTarget(ind)
