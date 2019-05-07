@@ -70,8 +70,9 @@ class Game():
 
 if __name__ == '__main__':
     # Sej overskrift generert med http://www.patorjk.com/software/taag
+    # Teksteffeter for ekstra retro-effekt med ANSI koder (http://ozzmaker.com/add-colour-to-text-in-python/)
     print("""
-            Det uendelige...\n
+            Det uendelige...\033[1;32;40m \n
     ▄▄▄█████▓▓█████  ██ ▄█▀  ██████ ▄▄▄█████▓▓█████ ██▒   █▓▓█████  ███▄    █ ▄▄▄█████▓▓██   ██▓ ██▀███
     ▓  ██▒ ▓▒▓█   ▀  ██▄█▒ ▒██    ▒ ▓  ██▒ ▓▒▓█   ▀▓██░   █▒▓█   ▀  ██ ▀█   █ ▓  ██▒ ▓▒ ▒██  ██▒▓██ ▒ ██▒
     ▒ ▓██░ ▒░▒███   ▓███▄░ ░ ▓██▄   ▒ ▓██░ ▒░▒███   ▓██  █▒░▒███   ▓██  ▀█ ██▒▒ ▓██░ ▒░  ▒██ ██░▓██ ░▄█ ▒
@@ -82,7 +83,7 @@ if __name__ == '__main__':
       ░         ░   ░ ░░ ░ ░  ░  ░    ░         ░       ░░     ░      ░   ░ ░   ░       ▒ ▒ ░░    ░░   ░
                 ░  ░░  ░         ░              ░  ░     ░     ░  ░         ░           ░ ░        ░
                                                         ░                               ░ ░
-            En endeløs famlen i mørket!\n\n\n
+            \033[1;37;40mEn endeløs famlen i mørket!\n\n\n
     """)
 
     playerName = input('Velkommen fremmede. Hvad er dit navn\n')
