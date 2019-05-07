@@ -69,7 +69,7 @@ class Game():
                 return target
 
 if __name__ == '__main__':
-    # Sej overskrift generert med http://www.patorjk.com/software/taag
+    # Sej overskrift genereret med http://www.patorjk.com/software/taag
     # Teksteffeter for ekstra retro-effekt med ANSI koder (http://ozzmaker.com/add-colour-to-text-in-python/)
     print("""
             Det uendelige...\033[1;32;40m \n
